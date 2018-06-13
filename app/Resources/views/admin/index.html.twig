@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Admins list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Photo</th>
+                <th>Iduser</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for admin in admins %}
+            <tr>
+                <td><a href="{{ path('admin_show', { 'id': admin.id }) }}">{{ admin.name }}</a></td>
+                <td>{{ admin.lastname }}</td>
+                <td>{{ admin.email }}</td>
+                <td>{{ admin.phone }}</td>
+                <td>{{ admin.photo }}</td>
+                <td>{{ admin.idUser }}</td>
+                <td>{{ admin.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_show', { 'id': admin.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_edit', { 'id': admin.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_new') }}">Create a new admin</a>
+        </li>
+    </ul>
+{% endblock %}

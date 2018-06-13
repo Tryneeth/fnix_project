@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Treatments list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for treatment in treatments %}
+            <tr>
+                <td><a href="{{ path('treatment_show', { 'id': treatment.id }) }}">{{ treatment.name }}</a></td>
+                <td>{{ treatment.description }}</td>
+                <td>{% if treatment.date %}{{ treatment.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ treatment.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('treatment_show', { 'id': treatment.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('treatment_edit', { 'id': treatment.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('treatment_new') }}">Create a new treatment</a>
+        </li>
+    </ul>
+{% endblock %}
