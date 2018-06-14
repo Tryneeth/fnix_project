@@ -138,5 +138,16 @@ class Treatment
     {
         return $this->idClient;
     }
+
+    /**
+     * Get _toString
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+
 }
 
