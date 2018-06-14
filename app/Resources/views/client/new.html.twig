@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
+{% block page_title %} Registrar Cliente {% endblock %}
+
 {% block body %}
-    <h1>Client creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="clearfix pt-2"></div>
+            <a class="btn btn-secondary" href="{{ path('client_index') }}">Back to the list</a>
+            <input class="btn btn-primary" type="submit" value="Create"/>
+            {{ form_end(form) }}
+        </div>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('client_index') }}">Back to the list</a>
-        </li>
-    </ul>
 {% endblock %}

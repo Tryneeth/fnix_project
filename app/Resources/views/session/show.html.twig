@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Session</h1>
+{% block page_title %}Sesión: {{ session.name }}{% endblock %}
 
-    <table>
+{% block body %}
+
+    <table class="table table-responsive">
         <tbody>
             <tr>
                 <th>Name</th>
@@ -28,17 +29,12 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('session_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('session_edit', { 'id': session.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="row">
+        <a class="btn btn-secondary" href="{{ path('session_index') }}">Back to the list</a>
+        <a class="btn btn-primary mx-2" href="{{ path('session_edit', { 'id': session.id }) }}">Edit</a>
+        {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+    </div>
+
 {% endblock %}
