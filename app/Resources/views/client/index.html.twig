@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Clients list</h1>
+{% block page_title %} Lista de Clientes {% endblock %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Lastname</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Mail</th>
-                <th>Photo</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
+{% block body %}
+
+    <table class="table table-bordered">
+        <thead class="thead-default">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Foto</th>
+            <th>Id</th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
         {% for client in clients %}
@@ -27,23 +28,17 @@
                 <td>{{ client.photo }}</td>
                 <td>{{ client.id }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('client_show', { 'id': client.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('client_edit', { 'id': client.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-primary" href="{{ path('client_show', { 'id': client.id }) }}"><i
+                                class="fa fa-edit"></i></a>
+
+                    <a class="btn btn-danger" href="{{ path('client_edit', { 'id': client.id }) }}"><i
+                                class="fa fa-trash"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('client_new') }}">Create a new client</a>
-        </li>
-    </ul>
+    <a class="btn btn-primary" href="{{ path('client_new') }}">Registrar Cliente</a>
+
 {% endblock %}

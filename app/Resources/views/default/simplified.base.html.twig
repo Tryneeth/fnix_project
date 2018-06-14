@@ -15,17 +15,19 @@
 </head>
 <body>
 {% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/popper.min.js') }}"></script><!-- Popper for Bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/detect.js') }}"></script>
-<script src="{{ asset('js/fastclick.js') }}"></script>
-<script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
-<script src="{{ asset('js/jquery.blockUI.js') }}"></script>
-<script src="{{ asset('js/waves.js') }}"></script>
-<script src="{{ asset('js/wow.min.js') }}"></script>
-<script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
-<script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script><!-- Popper for Bootstrap -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/detect.js') }}"></script>
+    <script src="{{ asset('js/fastclick.js') }}"></script>
+    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('js/jquery.blockUI.js') }}"></script>
+    <script src="{{ asset('js/waves.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
+    <script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
+{% endblock %}
+
 </body>
 </html>

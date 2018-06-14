@@ -1,6 +1,20 @@
 {% extends 'base.html.twig' %}
 
+{% block page_title %} Editar usuario: {{ admin.username }} {% endblock %}
+
 {% block body %}
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="clearfix pt-2"></div>
+            <a class="btn btn-secondary" href="{{ path('admin_index') }}">Back to the list</a>
+            <input class="btn btn-primary" type="submit" value="Create"/>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
     <h1>Admin edit</h1>
 
     {{ form_start(edit_form) }}

@@ -1,51 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Admins list</h1>
+{% block page_title %} Lista de Usuarios {% endblock %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Photo</th>
-                <th>username</th>
-                <th>Rol</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
+{% block body %}
+
+    <table class="table table-responsive table-bordered table">
+        <thead class="thead-default">
+        <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Foto</th>
+            <th>Rol</th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
         {% for admin in admins %}
             <tr>
-                <td><a href="{{ path('admin_show', { 'id': admin.id }) }}">{{ admin.name }}</a></td>
+                <td><a href="{{ path('admin_show', { 'id': admin.id }) }}">{{ admin.username }}</a></td>
+                <td>{{ admin.name }}</td>
                 <td>{{ admin.lastname }}</td>
                 <td>{{ admin.email }}</td>
                 <td>{{ admin.phone }}</td>
                 <td>{{ admin.photo }}</td>
-                <td>{{ admin.username }}</td>
                 <td>{{ admin.role }}</td>
-                <td>{{ admin.id }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_show', { 'id': admin.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_edit', { 'id': admin.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-primary" href="{{ path('admin_show', { 'id': admin.id }) }}"><i
+                                class="fa fa-edit"></i></a>
+
+                    <a class="btn btn-danger" href="{{ path('admin_edit', { 'id': admin.id }) }}"><i
+                                class="fa fa-trash"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_new') }}">Create a new admin</a>
-        </li>
-    </ul>
+    <a class="btn btn-primary" href="{{ path('admin_new') }}"><i class="fa fa-plus pr-2"></i>Registrar Usuario</a>
+
 {% endblock %}
