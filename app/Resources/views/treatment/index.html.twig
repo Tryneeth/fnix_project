@@ -7,11 +7,10 @@
     <table class="table table-responsive table-bordered table">
         <thead class="thead-default">
             <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Id</th>
-                <th>Actions</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -20,25 +19,18 @@
                 <td><a href="{{ path('treatment_show', { 'id': treatment.id }) }}">{{ treatment.name }}</a></td>
                 <td>{{ treatment.description }}</td>
                 <td>{% if treatment.date %}{{ treatment.date|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ treatment.id }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('treatment_show', { 'id': treatment.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('treatment_edit', { 'id': treatment.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-primary" href="{{ path('treatment_show', { 'id': treatment.id }) }}"><i
+                                class="fa fa-edit"></i></a>
+
+                    <a class="btn btn-danger" href="{{ path('treatment_edit', { 'id': treatment.id }) }}"><i
+                                class="fa fa-trash"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('treatment_new') }}">Create a new treatment</a>
-        </li>
-    </ul>
+    <a class="btn btn-primary" href="{{ path('treatment_new') }}"><i class="fa fa-plus pr-2"></i>Registrar Tratamiento</a>
+
 {% endblock %}

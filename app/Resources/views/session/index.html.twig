@@ -7,12 +7,11 @@
     <table class="table table-responsive table-bordered table">
         <thead class="thead-default">
             <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Alarm</th>
-                <th>Date</th>
-                <th>Id</th>
-                <th>Actions</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Alarma</th>
+                <th>Fecha</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -22,25 +21,18 @@
                 <td>{{ session.description }}</td>
                 <td>{% if session.alarm %}{{ session.alarm|date('Y-m-d') }}{% endif %}</td>
                 <td>{% if session.date %}{{ session.date|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ session.id }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('session_show', { 'id': session.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('session_edit', { 'id': session.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-primary" href="{{ path('session_show', { 'id': session.id }) }}"><i
+                                class="fa fa-edit"></i></a>
+
+                    <a class="btn btn-danger" href="{{ path('session_edit', { 'id': session.id }) }}"><i
+                                class="fa fa-trash"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('session_new') }}">Create a new session</a>
-        </li>
-    </ul>
+    <a class="btn btn-primary" href="{{ path('session_new') }}"><i class="fa fa-plus pr-2"></i>Registrar Sesión</a>
+
 {% endblock %}
