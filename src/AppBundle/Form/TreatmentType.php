@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,7 +24,7 @@ class TreatmentType extends AbstractType
 		         'label' => 'Nombre'
 		        ]
 	        )
-	        ->add('description',TextType::class,
+	        ->add('description',TextareaType::class,
 		        ['attr' =>
 			         ['class' => 'form-control'],
 		         'label' => 'Descripción'
@@ -35,10 +36,10 @@ class TreatmentType extends AbstractType
 		         'label' => 'Fecha'
 		        ]
 	        )
-	        ->add('idClient',NumberType::class,
+	        ->add('idClient', null,
 		        ['attr' =>
-			         ['class' => 'form-control'],
-		         'label' => 'Identificador del Cliente'
+			         ['class' => 'form-control', 'required' => ''],
+		         'label' => 'Cliente'
 		        ]
 	        );
     }/**

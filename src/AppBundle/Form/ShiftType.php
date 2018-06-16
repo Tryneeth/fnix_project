@@ -3,10 +3,13 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class ShiftType extends AbstractType {
 	/**
@@ -21,11 +24,11 @@ class ShiftType extends AbstractType {
 					'label' => 'Fecha'
 				]
 			)
-			->add( 'idClient', NumberType::class,
+			->add( 'idClient',null,
 				[
 					'attr'  =>
 						[ 'class' => 'form-control' ],
-					'label' => 'Indentificador del Cliente'
+					'label' => 'Cliente'
 				]
 			);
 	}

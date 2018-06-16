@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Entity;
+use \Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Client
@@ -184,7 +185,7 @@ class Client
      */
     public function getPhoto()
     {
-        return $this->photo;
+    	return new File($this->photo, false);
     }
 
     /**

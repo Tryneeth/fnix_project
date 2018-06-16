@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -172,7 +174,7 @@ class Admin implements UserInterface
      */
     public function getPhoto()
     {
-        return $this->photo;
+	    return new File($this->photo, false);
     }
 
 

@@ -1,21 +1,30 @@
 {% extends 'base.html.twig' %}
 
+{% block page_title %} Editar Turno: {{ shift.id }} {% endblock %}
+
 {% block body %}
-    <h1>Shift edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    {{ form_start(delete_form) }}
+                    <div class="text-right w-100">
+                        <input class="btn btn-danger" type="submit" value="Eliminar">
+                    </div>
+                    {{ form_end(delete_form) }}
+                </div>
+                {{ form_start(edit_form) }}
+                <div class="card-body">
+                    {{ form_widget(edit_form) }}
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="{{ path('shift_index') }}">Regresar a la lista</a>
+                    <input class="btn btn-primary" type="submit" value="Guardar cambios"/>
+                </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('shift_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}

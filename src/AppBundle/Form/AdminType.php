@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Intl\NumberFormatter\NumberFormatter;
@@ -61,7 +62,7 @@ class AdminType extends AbstractType {
 					'label' => 'Correo'
 				]
 			)
-			->add( 'phone', NumberType::class,
+			->add( 'phone', TelType::class,
 				[
 					'attr'  =>
 						[ 'class' => 'form-control' ],
@@ -72,7 +73,7 @@ class AdminType extends AbstractType {
 				[
 					'attr'  =>
 						[ 'class' => 'form-control' ],
-					'label' => 'Foto de perfil'
+					'label' => 'Foto de perfil',
 				]
 			);
 	}

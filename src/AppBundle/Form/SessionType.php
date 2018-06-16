@@ -2,9 +2,11 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,14 +24,14 @@ class SessionType extends AbstractType {
 					'label' => 'Nombre'
 				]
 			)
-			->add( 'description', TextType::class,
+			->add( 'description', TextareaType::class,
 				[
 					'attr'  =>
 						[ 'class' => 'form-control' ],
 					'label' => 'Descripción'
 				]
 			)
-			->add( 'alarm', DateType::class,
+			->add( 'alarm', DateTimeType::class,
 				[
 					'attr'  =>
 						[ 'class' => 'form-control' ],
@@ -43,7 +45,7 @@ class SessionType extends AbstractType {
 					'label' => 'Fecha'
 				]
 			)
-			->add( 'idTreatment', TextType::class,
+			->add( 'idTreatment', null,
 				[
 					'attr'  =>
 						[ 'class' => 'form-control' ],
@@ -51,7 +53,7 @@ class SessionType extends AbstractType {
 
 				]
 			)
-			->add( 'idAdmin', CheckboxType::class,
+			->add( 'idAdmin', null,
 				[
 					'attr'  =>
 						[ 'class' => 'form-control' ],
