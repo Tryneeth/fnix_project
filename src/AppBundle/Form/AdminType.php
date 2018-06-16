@@ -14,72 +14,84 @@ use Symfony\Component\Intl\NumberFormatter\NumberFormatter;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
 
-class AdminType extends AbstractType
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('username',TextType::class,
-	            ['attr' =>
-		             ['class' => 'form-control']
-	            ]
-            )
-            ->add('password',RepeatedType::class,[
-                'type'=> PasswordType::class,
-                'required' => true,
-                'first_options'  => array('label' => 'Password', 'attr' => ['class' => 'form-control']),
-                'second_options' => array('label' => 'Repeat Password', 'attr' => ['class' => 'form-control']),
-            ])
-            ->add('role', TextType::class,
-	            ['attr' =>
-		             ['class' => 'form-control']
-	            ]
-            )
-            ->add('name',TextType::class,
-	            ['attr' =>
-		             ['class' => 'form-control']
-	            ]
-            )
-            ->add('lastname',TextType::class,
-	            ['attr' =>
-		             ['class' => 'form-control']
-	            ]
-            )
-            ->add('email',EmailType::class,
-	            ['attr' =>
-		             ['class' => 'form-control']
-	            ]
-            )
-            ->add('phone',NumberType::class,
-	            ['attr' =>
-		             ['class' => 'form-control']
-	            ]
-            )
-            ->add('photo', FileType::class,
-	            ['attr' =>
-		             ['class' => 'form-control']
-	            ]
-            );
-    }/**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Admin'
-        ));
-    }
+class AdminType extends AbstractType {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function buildForm( FormBuilderInterface $builder, array $options ) {
+		$builder
+			->add( 'username', TextType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Usuario'
+				]
+			)
+			->add( 'password', RepeatedType::class, [
+				'type'           => PasswordType::class,
+				'required'       => true,
+				'first_options'  => array( 'label' => 'Contraseña', 'attr' => [ 'class' => 'form-control' ] ),
+				'second_options' => array( 'label' => 'Repetir Contraseña', 'attr' => [ 'class' => 'form-control' ] ),
+			] )
+			->add( 'role', TextType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Rol'
+				]
+			)
+			->add( 'name', TextType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Nombre'
+				]
+			)
+			->add( 'lastname', TextType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Apellidos'
+				]
+			)
+			->add( 'email', EmailType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Correo'
+				]
+			)
+			->add( 'phone', NumberType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Teléfono'
+				]
+			)
+			->add( 'photo', FileType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Foto de perfil'
+				]
+			);
+	}
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'appbundle_admin';
-    }
+	/**
+	 * {@inheritdoc}
+	 */
+	public function configureOptions( OptionsResolver $resolver ) {
+		$resolver->setDefaults( array(
+			'data_class' => 'AppBundle\Entity\Admin'
+		) );
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function getBlockPrefix() {
+		return 'appbundle_admin';
+	}
 
 
 }

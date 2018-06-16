@@ -19,22 +19,26 @@ class TreatmentType extends AbstractType
         $builder
 	        ->add('name',TextType::class,
 		        ['attr' =>
-			         ['class' => 'form-control']
+			         ['class' => 'form-control'],
+		         'label' => 'Nombre'
 		        ]
 	        )
 	        ->add('description',TextType::class,
 		        ['attr' =>
-			         ['class' => 'form-control']
+			         ['class' => 'form-control'],
+		         'label' => 'Descripción'
 		        ]
 	        )
 	        ->add('date',DateType::class,
 		        ['attr' =>
-			         ['class' => 'form-control']
+			         ['class' => 'form-control'],
+		         'label' => 'Fecha'
 		        ]
 	        )
 	        ->add('idClient',NumberType::class,
 		        ['attr' =>
-			         ['class' => 'form-control']
+			         ['class' => 'form-control'],
+		         'label' => 'Identificador del Cliente'
 		        ]
 	        );
     }/**

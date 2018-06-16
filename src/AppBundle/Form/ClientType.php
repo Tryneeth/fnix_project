@@ -10,61 +10,71 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ClientType extends AbstractType
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-	        ->add('name',TextType::class,
-		        ['attr' =>
-			         ['class' => 'form-control']
-		        ]
-	        )
-	        ->add('lastname',TextType::class,
-		        ['attr' =>
-			         ['class' => 'form-control']
-		        ]
-	        )
-	        ->add('address',TextType::class,
-		        ['attr' =>
-			         ['class' => 'form-control']
-		        ]
-	        )
-	        ->add('phone',NumberType::class,
-		        ['attr' =>
-			         ['class' => 'form-control']
-		        ]
-	        )
-	        ->add('mail',EmailType::class,
-		        ['attr' =>
-			         ['class' => 'form-control']
-		        ]
-	        )
-	        ->add('photo',FileType::class,
-		        ['attr' =>
-			         ['class' => 'form-control']
-		        ]
-	        );
-    }/**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Client'
-        ));
-    }
+class ClientType extends AbstractType {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function buildForm( FormBuilderInterface $builder, array $options ) {
+		$builder
+			->add( 'name', TextType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Nombre'
+				]
+			)
+			->add( 'lastname', TextType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Apellidos'
+				]
+			)
+			->add( 'address', TextType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Dirección'
+				]
+			)
+			->add( 'phone', NumberType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Teléfono'
+				]
+			)
+			->add( 'mail', EmailType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Correo'
+				]
+			)
+			->add( 'photo', FileType::class,
+				[
+					'attr'  =>
+						[ 'class' => 'form-control' ],
+					'label' => 'Foto de perfil'
+				]
+			);
+	}
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'appbundle_client';
-    }
+	/**
+	 * {@inheritdoc}
+	 */
+	public function configureOptions( OptionsResolver $resolver ) {
+		$resolver->setDefaults( array(
+			'data_class' => 'AppBundle\Entity\Client'
+		) );
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function getBlockPrefix() {
+		return 'appbundle_client';
+	}
 
 
 }
