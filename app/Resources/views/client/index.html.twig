@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <table class="table table-responsive table-bordered">
+    <table class="table table-responsive table-bordered table-hover">
         <thead class="thead-default">
         <tr>
             <th>Nombre</th>
@@ -25,9 +25,9 @@
                 <td>{{ client.phone }}</td>
                 <td>{{ client.mail }}</td>
                 <td>{{ client.photo }}</td>
-                <td>
+                <td class="text-center">
                     <a class="btn btn-primary" href="{{ path('client_show', { 'id': client.id }) }}"><i
-                                class="fa fa-edit"></i></a>
+                                class="fa fa-eye"></i></a>
 
                     <a class="btn btn-danger" href="{{ path('client_edit', { 'id': client.id }) }}"><i
                                 class="fa fa-trash"></i></a>
@@ -37,6 +37,6 @@
         </tbody>
     </table>
 
-    <a class="btn btn-primary" href="{{ path('client_new') }}">Registrar Cliente</a>
+    <a class="btn btn-primary" href="{{ path('client_new') }}"><i class="fa fa-plus pr-2"></i>Registrar Cliente</a>
 
 {% endblock %}

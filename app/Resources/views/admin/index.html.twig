@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <table class="table table-responsive table-bordered">
+    <table class="table table-responsive table-bordered table-hover">
         <thead class="thead-default">
         <tr>
             <th>Usuario</th>
@@ -27,9 +27,9 @@
                 <td>{{ admin.phone }}</td>
                 <td>{{ admin.photo }}</td>
                 <td>{{ admin.role }}</td>
-                <td>
+                <td class="text-center">
                     <a class="btn btn-primary" href="{{ path('admin_show', { 'id': admin.id }) }}"><i
-                                class="fa fa-edit"></i></a>
+                                class="fa fa-eye"></i></a>
 
                     <a class="btn btn-danger" href="{{ path('admin_edit', { 'id': admin.id }) }}"><i
                                 class="fa fa-trash"></i></a>

@@ -4,45 +4,29 @@
 
 {% block body %}
 
-    <table class="table table-responsive">
-        <tbody>
-        <tr>
-            <th>Nombre</th>
-            <td>{{ admin.name }}</td>
-        </tr>
-        <tr>
-            <th>Apellidos</th>
-            <td>{{ admin.lastname }}</td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>{{ admin.email }}</td>
-        </tr>
-        <tr>
-            <th>Teléfono</th>
-            <td>{{ admin.phone }}</td>
-        </tr>
-        <tr>
-            <th>Foto</th>
-            <td>{{ admin.photo }}</td>
-        </tr>
-        <tr>
-            <th>Usuario</th>
-            <td>{{ admin.username }}</td>
-        </tr>
-        <tr>
-            <th>Rol</th>
-            <td>{{ admin.role }}</td>
-        </tr>
-        </tbody>
-    </table>
-
     <div class="row">
-        <a class="btn btn-secondary" href="{{ path('admin_index') }}">Back to the list</a>
-        <a class="btn btn-primary mx-2" href="{{ path('admin_edit', { 'id': admin.id }) }}">Edit</a>
-        {{ form_start(delete_form) }}
-        <input class="btn btn-danger" type="submit" value="Delete">
-        {{ form_end(delete_form) }}
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>{{ admin.name }} {{ admin.lastname }}</h3>
+                </div>
+                <div class="card-body">
+                    <p><i class="fa fa-user-o mr-2"></i>{{ admin.username }}</p>
+                    <p><i class="fa fa-envelope-o mr-2"></i>{{ admin.email }}</p>
+                    <p><i class="fa fa-phone mr-2"></i>{{ admin.phone }}</p>
+                    <p><i class="fa fa-suitcase mr-2"></i>{{ admin.role }}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <a class="btn btn-secondary" href="{{ path('admin_index') }}">Regresar a la lista</a>
+                        <a class="btn btn-primary mx-2" href="{{ path('admin_edit', { 'id': admin.id }) }}">Editar</a>
+                        {{ form_start(delete_form) }}
+                        <input class="btn btn-danger" type="submit" value="Eliminar">
+                        {{ form_end(delete_form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

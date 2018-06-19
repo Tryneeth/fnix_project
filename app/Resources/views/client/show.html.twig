@@ -4,45 +4,29 @@
 
 {% block body %}
 
-    <table class="table table-responsive">
-        <tbody>
-            <tr>
-                <th>Name</th>
-                <td>{{ client.name }}</td>
-            </tr>
-            <tr>
-                <th>Lastname</th>
-                <td>{{ client.lastname }}</td>
-            </tr>
-            <tr>
-                <th>Address</th>
-                <td>{{ client.address }}</td>
-            </tr>
-            <tr>
-                <th>Phone</th>
-                <td>{{ client.phone }}</td>
-            </tr>
-            <tr>
-                <th>Mail</th>
-                <td>{{ client.mail }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td>{{ client.photo }}</td>
-            </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ client.id }}</td>
-            </tr>
-        </tbody>
-    </table>
-
     <div class="row">
-        <a class="btn btn-secondary" href="{{ path('client_index') }}">Back to the list</a>
-        <a class="btn btn-primary mx-2" href="{{ path('client_edit', { 'id': client.id }) }}">Edit</a>
-        {{ form_start(delete_form) }}
-        <input class="btn btn-danger" type="submit" value="Delete">
-        {{ form_end(delete_form) }}
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>{{ client.name }} {{ client.lastname }} ID: {{ client.id }}</h3>
+                </div>
+                <div class="card-body">
+                    <p><i class="fa fa-map-marker mr-2"></i>{{ client.address }}</p>
+                    <p><i class="fa fa-envelope-o mr-2"></i>{{ client.mail }}</p>
+                    <p><i class="fa fa-phone mr-2"></i>{{ client.phone }}</p>
+                    <p><i class="fa fa-suitcase mr-2"></i>{{ admin.role }}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <a class="btn btn-secondary" href="{{ path('client_index') }}">Regresar a la lista</a>
+                        <a class="btn btn-primary mx-2" href="{{ path('client_edit', { 'id': client.id }) }}">Editar</a>
+                        {{ form_start(delete_form) }}
+                        <input class="btn btn-danger" type="submit" value="Eliminar">
+                        {{ form_end(delete_form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

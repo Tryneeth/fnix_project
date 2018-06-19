@@ -149,10 +149,70 @@
     </div>
     <!-- Top Bar End -->
 
+    <!-- ========== Left Sidebar Start ========== -->
+
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+            <!--- Divider -->
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="menu-title">Menú</li>
+
+                    <li>
+                        <a href="{{ path('admin_index') }}" class="waves-effect waves-primary"><i
+                                    class="ti-settings"></i><span> Administrar Usuarios </span></a>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-user"></i> <span> Clientes </span>
+                            <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ path('client_index') }}">Lista de clientes</a></li>
+                            <li><a href="{{ path('client_new') }}">Registrar cliente</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="fa fa-edit"></i> <span> Turnos </span>
+                            <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ path('shift_index') }}">Lista de turnos</a></li>
+                            <li><a href="{{ path('shift_new') }}">Registrar turno</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="fa fa-hard-of-hearing"></i> <span> Tratamientos </span>
+                            <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ path('treatment_index') }}">Lista de tramientos</a></li>
+                            <li><a href="{{ path('treatment_new') }}">Registrar tramiento</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="fa fa-heart-o"></i> <span> Sesiones </span>
+                            <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ path('session_index') }}">Lista de sesiones</a></li>
+                            <li><a href="{{ path('session_new') }}">Registrar sesión</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- Left Sidebar End -->
+
+
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
-    <div class="content-page" style="margin-left: 0">
+    <div class="content-page">
         <!-- Start content -->
         <div class="content">
             <div class="container-fluid">
@@ -174,7 +234,7 @@
         </div>
         <!-- end content -->
 
-        <footer class="footer" style="left: 0">
+        <footer class="footer">
             2016 - 2017 © Minton <span class="hide-phone">- Coderthemes.com</span>
         </footer>
 
@@ -188,18 +248,25 @@
 
 
 {% block javascripts %}
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script><!-- Popper for Bootstrap -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/detect.js') }}"></script>
-    <script src="{{ asset('js/fastclick.js') }}"></script>
-    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
-    <script src="{{ asset('js/jquery.blockUI.js') }}"></script>
-    <script src="{{ asset('js/waves.js') }}"></script>
-    <script src="{{ asset('js/wow.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
-    <script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
+
 {% endblock %}
 
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/popper.min.js') }}"></script><!-- Popper for Bootstrap -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/detect.js') }}"></script>
+<script src="{{ asset('js/fastclick.js') }}"></script>
+<script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
+<script src="{{ asset('js/jquery.blockUI.js') }}"></script>
+<script src="{{ asset('js/waves.js') }}"></script>
+<script src="{{ asset('js/wow.min.js') }}"></script>
+<script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
+<script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
+<!-- Page js  -->
+<script src="{{ asset('pages/jquery.dashboard.js') }}"></script>
+
+<!-- Custom main Js -->
+<script src="{{ asset('js/jquery.core.js') }}"></script>
+<script src="{{ asset('js/jquery.app.js') }}"></script>
 </body>
 </html>
