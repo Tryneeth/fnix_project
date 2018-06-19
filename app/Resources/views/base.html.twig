@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -24,7 +25,7 @@
         <!-- LOGO -->
         <div class="topbar-left">
             <div class="text-center">
-                <a href="index.html" class="logo"><i class="mdi mdi-radar"></i> <span>Minton</span></a>
+                <a href="/" class="logo"><i class="mdi mdi-radar"></i> <span>Minton</span></a>
             </div>
         </div>
 
@@ -32,18 +33,6 @@
         <nav class="navbar-custom">
 
             <ul class="list-inline float-right mb-0">
-
-                <li class="list-inline-item notification-list hide-phone">
-                    <a class="nav-link waves-light waves-effect" href="#" id="btn-fullscreen">
-                        <i class="mdi mdi-crop-free noti-icon"></i>
-                    </a>
-                </li>
-
-                <li class="list-inline-item notification-list">
-                    <a class="nav-link right-bar-toggle waves-light waves-effect" href="#">
-                        <i class="mdi mdi-dots-horizontal noti-icon"></i>
-                    </a>
-                </li>
 
                 <li class="list-inline-item dropdown notification-list">
                     <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
@@ -136,12 +125,6 @@
                         <i class="mdi mdi-menu"></i>
                     </button>
                 </li>
-                <li class="hide-phone app-search">
-                    <form role="search" class="">
-                        <input type="text" placeholder="Search..." class="form-control">
-                        <a href=""><i class="fa fa-search"></i></a>
-                    </form>
-                </li>
             </ul>
 
         </nav>
@@ -182,7 +165,7 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="fa fa-hard-of-hearing"></i> <span> Tratamientos </span>
+                        <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="fa fa-hospital-o"></i> <span> Tratamientos </span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="{{ path('treatment_index') }}">Lista de tramientos</a></li>
